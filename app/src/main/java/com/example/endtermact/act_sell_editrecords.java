@@ -25,11 +25,11 @@ import org.json.JSONObject;
 
 public class act_sell_editrecords extends AppCompatActivity {
     private static Button btnQuery;
-    private static EditText edtitemcode,names,cname,qty,idt,rate,Totalrate,edtcfname,edtclname,editpname,edtpqty,edtpprice,edtccontact;
+    private static EditText edtcfname,edtclname,editpname,edtpqty,edtpprice,edtccontact;
     private static TextView tv_civ;
     private static String cItemcode = "";
     private static com.example.boparaiyoshidame1_delicioso.JSONParser jParser = new com.example.boparaiyoshidame1_delicioso.JSONParser();
-    private static String urlHost = "http://192.168.1.16/burger/UpdateQty.php";
+    private static String urlHost = "http://192.168.1.11/veggi/UpdateQty.php";
     private static String TAG_MESSAGE = "message" , TAG_SUCCESS = "success";
     private static String online_dataset = "";
 
@@ -41,7 +41,7 @@ public class act_sell_editrecords extends AppCompatActivity {
     public static final String CCONTACT = "CCONTACT";
 
     public static final String ID = "ID";
-    private String aydi,Cname,Qty,Idt,Pce,tp, cfname, clname, pname,pqty,pprice,ccontact;
+    private String aydi,cfname, clname, pname,pqty,pprice,ccontact;
 
     public static String CustomerFirstName = "";
     public static String CustomerLastName = "";

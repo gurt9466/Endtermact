@@ -31,13 +31,14 @@ public class act_sell_manage extends AppCompatActivity {
     TextView textView,txtDefault,txtDefault_Pqty,txtDefault_Pname,txtDefault_Pprice,txtDefault_Cfname,txtDefault_Clname,txtDefault_Ccontact,txtDefault_ID;
     private static  EditText edtitemcode;
     private static com.example.boparaiyoshidame1_delicioso.JSONParser jParser = new com.example.boparaiyoshidame1_delicioso.JSONParser();
-    private static String urlHost = "";
-    private static String urlHostDelete = "";
-    private static String urlHostQTY = "http://192.168.1.16/burger/SelectQTY.php";
-    private static String urlHostIDT= "http://192.168.1.16/burger/SelectIDT.php";
-    private static String urlHostPrice = "http://192.168.1.16/burger/SelectPrice.php";
-    private static String urlHostTotalPrice = "http://192.168.1.16/burger/SelectTotalPrice.php";
-    private static String urlHostID = "http://192.168.1.16/burger/SelectId.php";
+    private static String urlHost = "http://192.168.1.11/veggi/SelectItemDetails.php";
+    private static String urlHostDelete = "http://192.168.1.11/veggi/delete.php";
+    private static String urlHostID= "";
+    private static String urlHostID= "";
+    private static String urlHostID= "";
+    private static String urlHostID= "";
+    private static String urlHostID= "";
+    private static String urlHostID = "http://192.168.1.11/veggi/SelectId.php";
     private static String TAG_MESSAGE = "message", TAG_SUCCESS = "success";
     private static String online_dataset = "";
     private static String cItemcode = "";
@@ -312,7 +313,7 @@ public class act_sell_manage extends AppCompatActivity {
                 cPostSQL = cItemcode;
                 cv.put("code", cPostSQL);
 
-                JSONObject json = jParser.makeHTTPRequest(urlHostQTY, "POST", cv);
+                JSONObject json = jParser.makeHTTPRequest(urlHostCLNAME, "POST", cv);
                 if (json != null) {
                     nSuccess = json.getInt(TAG_SUCCESS);
                     if (nSuccess == 1) {
@@ -390,7 +391,7 @@ public class act_sell_manage extends AppCompatActivity {
                 cPostSQL = cItemcode;
                 cv.put("code", cPostSQL);
 
-                JSONObject json = jParser.makeHTTPRequest(urlHostQTY, "POST", cv);
+                JSONObject json = jParser.makeHTTPRequest(urlHostPQTY, "POST", cv);
                 if (json != null) {
                     nSuccess = json.getInt(TAG_SUCCESS);
                     if (nSuccess == 1) {
@@ -468,7 +469,7 @@ public class act_sell_manage extends AppCompatActivity {
                 cPostSQL = cItemcode;
                 cv.put("code", cPostSQL);
 
-                JSONObject json = jParser.makeHTTPRequest(urlHostQTY, "POST", cv);
+                JSONObject json = jParser.makeHTTPRequest(urlHostPNAME, "POST", cv);
                 if (json != null) {
                     nSuccess = json.getInt(TAG_SUCCESS);
                     if (nSuccess == 1) {
@@ -546,7 +547,7 @@ public class act_sell_manage extends AppCompatActivity {
                 cPostSQL = cItemcode;
                 cv.put("code", cPostSQL);
 
-                JSONObject json = jParser.makeHTTPRequest(urlHostQTY, "POST", cv);
+                JSONObject json = jParser.makeHTTPRequest(urlHostPPRICE, "POST", cv);
                 if (json != null) {
                     nSuccess = json.getInt(TAG_SUCCESS);
                     if (nSuccess == 1) {
@@ -624,7 +625,7 @@ public class act_sell_manage extends AppCompatActivity {
                 cPostSQL = cItemcode;
                 cv.put("code", cPostSQL);
 
-                JSONObject json = jParser.makeHTTPRequest(urlHostQTY, "POST", cv);
+                JSONObject json = jParser.makeHTTPRequest(urlCCONTACT, "POST", cv);
                 if (json != null) {
                     nSuccess = json.getInt(TAG_SUCCESS);
                     if (nSuccess == 1) {
