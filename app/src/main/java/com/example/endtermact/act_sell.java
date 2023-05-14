@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.ContentValues;
+import android.content.Intent;
+import android.media.Image;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
@@ -17,13 +19,13 @@ import android.widget.Toast;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+
 public class act_sell extends AppCompatActivity {
 
-    ImageView sellerproductimage;
-    EditText etdpname, edtqty, edtprice, edtfsellername, edtlsellername,edtsellercontactnumber;
-    Button uploadbtn ;
-    private static JSONParser jParser = new JSONParser();
-    private static String urlHost = "http://192.168.1.16/burger/InsertTrans.php";
+    EditText etdpname, edtqty, edtprice, edtfsellername, edtlsellername, edtsellercontactnumber;
+    Button btnsubmit;
+    private static com.example.boparaiyoshidame1_delicioso.JSONParser jParser = new com.example.boparaiyoshidame1_delicioso.JSONParser();
+    private static String urlHost = "http://192.168.1.11/veggi/InsertTrans.php";
     private static String TAG_MESSAGE = "message", TAG_SUCCESS = "success";
     private static String online_dataset = "";
     private static String Pname = "";
@@ -31,7 +33,7 @@ public class act_sell extends AppCompatActivity {
     private static String Pprice = "";
     private static String Cfname = "";
     private static String Clname = "";
-    private static String Ccontanct = "";
+    private static String Ccontact = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,23 +46,23 @@ public class act_sell extends AppCompatActivity {
         edtfsellername = findViewById(R.id.edtfsellername);
         edtlsellername = findViewById(R.id.edtlsellername2);
         edtsellercontactnumber = findViewById(R.id.edtcontactnumber);
-        sellerproductimage = findViewById(R.id.imgsellpro);
-        uploadbtn = findViewById(R.id.btnupload);
+        btnsubmit = findViewById(R.id.btnsubmit);
 
-        uploadbtn.setOnClickListener(new View.OnClickListener() {
+        btnsubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 Pname = etdpname.getText().toString();
                 Pqty = edtqty.getText().toString();
                 Pprice = edtprice.getText().toString();
                 Cfname = edtfsellername.getText().toString();
                 Clname = edtlsellername.getText().toString();
-                Ccontanct = edtsellercontactnumber.getText().toString();
+                Ccontact = edtsellercontactnumber.getText().toString();
+
                 new uploadDataToURL().execute();
             }
         });
     }
+
 
     private class uploadDataToURL extends AsyncTask<String, String, String> {
         String CPOST = "", cPostSQL = "", cMessage = "Querying data...";
@@ -85,7 +87,7 @@ public class act_sell extends AppCompatActivity {
             try {
                 ContentValues cv = new ContentValues();
                 //insert anything in this code
-                cPostSQL = " '" + Pname + "' , '" + Pqty + "' , '" + Pprice + "' , '" + Cfname +"' , '" + Clname + "' , '" + Ccontanct + "' ";
+                cPostSQL = " '" + Pname + "' , '" + Pqty + "' , '" + Pprice + "' , '" + Cfname +"' , '" + Clname + "', '" + Ccontact +"' ";
                 cv.put("code", cPostSQL);
 
                 JSONObject json = jParser.makeHTTPRequest(urlHost, "POST", cv);

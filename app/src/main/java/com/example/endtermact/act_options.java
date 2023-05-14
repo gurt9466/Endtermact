@@ -15,13 +15,13 @@ public class act_options extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_act_options);
 
-        btnBuy = findViewById(R.id.btnbuy);
-        btnSell = findViewById(R.id.btnsell);
+        btnBuy = findViewById(R.id.btnrequest);
+        btnSell = findViewById(R.id.btnedtrequest);
 
         btnBuy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent (act_options.this, act_buy.class);
+                Intent intent = new Intent (act_options.this, act_buy_options.class);
                 startActivity(intent);
             }
         });
@@ -29,7 +29,7 @@ public class act_options extends AppCompatActivity {
         btnSell.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent (act_options.this, act_sell.class);
+                Intent intent = new Intent (act_options.this,act_sell_options.class);
                 startActivity(intent);
             }
         });

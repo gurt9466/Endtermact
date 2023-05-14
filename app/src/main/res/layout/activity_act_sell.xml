@@ -11,9 +11,10 @@
         android:layout_width="289dp"
         android:layout_height="61dp"
         android:layout_marginStart="61dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="4dp"
         android:layout_marginEnd="61dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/logo" />
@@ -23,13 +24,14 @@
         android:layout_width="188dp"
         android:layout_height="43dp"
         android:layout_marginStart="111dp"
-        android:layout_marginTop="22dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="112dp"
         android:fontFamily="sans-serif-black"
         android:text="What are you selling ?"
         android:textAlignment="viewStart"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView4" />
 
@@ -39,7 +41,7 @@
         android:layout_height="43dp"
         android:layout_marginStart="99dp"
         android:layout_marginEnd="99dp"
-        android:layout_marginBottom="256dp"
+        android:layout_marginBottom="396dp"
         android:fontFamily="sans-serif-black"
         android:text="How can we Contact you ?"
         android:textAlignment="viewStart"
@@ -53,81 +55,24 @@
         android:id="@+id/edtpname"
         android:layout_width="349dp"
         android:layout_height="43dp"
-        android:layout_marginStart="26dp"
-        android:layout_marginBottom="68dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginBottom="96dp"
         android:ems="10"
         android:hint="Enter Product Name"
-        android:inputType="textPersonName"
         app:layout_constraintBottom_toTopOf="@+id/textView6"
         app:layout_constraintStart_toStartOf="parent" />
-
-    <EditText
-        android:id="@+id/edtfsellername"
-        android:layout_width="170dp"
-        android:layout_height="43dp"
-        android:layout_marginStart="26dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="16dp"
-        android:ems="10"
-        android:hint="First Name"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toStartOf="@+id/edtlsellername2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
-
-    <EditText
-        android:id="@+id/edtlsellername2"
-        android:layout_width="170dp"
-        android:layout_height="43dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="29dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:hint="Last Name"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/edtfsellername"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
-
-    <EditText
-        android:id="@+id/edtcontactnumber"
-        android:layout_width="198dp"
-        android:layout_height="43dp"
-        android:layout_marginStart="18dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="215dp"
-        android:ems="10"
-        android:hint="Enter Contact Number"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtfsellername" />
-
-    <ImageView
-        android:id="@+id/imgsellpro"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="141dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="142dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4"
-        tools:srcCompat="@tools:sample/avatars" />
 
     <EditText
         android:id="@+id/edtqty"
         android:layout_width="136dp"
         android:layout_height="43dp"
         android:layout_marginStart="10dp"
-        android:layout_marginBottom="14dp"
+        android:layout_marginBottom="40dp"
         android:ems="10"
         android:hint="Enter Quantity"
-        android:inputType="textPersonName"
         app:layout_constraintBottom_toTopOf="@+id/textView6"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.094"
+        app:layout_constraintHorizontal_bias="0.135"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
@@ -136,14 +81,66 @@
         android:layout_height="43dp"
         android:layout_marginStart="227dp"
         android:layout_marginEnd="48dp"
-        android:layout_marginBottom="14dp"
+        android:layout_marginBottom="40dp"
         android:ems="10"
         android:hint="Enter Price"
-        android:inputType="textPersonName"
         app:layout_constraintBottom_toTopOf="@+id/textView6"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/edtlsellername2"
+        android:layout_width="170dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="29dp"
+        android:ems="10"
+        android:hint="Last Name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/edtfsellername"
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+    <EditText
+        android:id="@+id/edtfsellername"
+        android:layout_width="170dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="16dp"
+        android:ems="10"
+        android:hint="First Name"
+        app:layout_constraintEnd_toStartOf="@+id/edtlsellername2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+    <EditText
+        android:id="@+id/edtcontactnumber"
+        android:layout_width="198dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="215dp"
+        android:ems="10"
+        android:hint="Enter Contact Number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtfsellername" />
+
+    <Button
+        android:id="@+id/btnsubmit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="160dp"
+        android:layout_marginTop="68dp"
+        android:layout_marginEnd="57dp"
+        android:text="upload"
+        app:layout_constraintEnd_toStartOf="@+id/imageView7"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtcontactnumber" />
 
     <ImageView
         android:id="@+id/imageView7"
@@ -155,17 +152,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/veggie1" />
-
-    <Button
-        android:id="@+id/btnupload"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="160dp"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="57dp"
-        android:text="upload"
-        app:layout_constraintEnd_toStartOf="@+id/imageView7"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtcontactnumber" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
