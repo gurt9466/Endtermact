@@ -1,4 +1,4 @@
-package com.example.boparaiyoshidame1_delicioso;
+package com.example.endtermact;
 import android.content.ContentValues;
 
 import org.json.JSONException;

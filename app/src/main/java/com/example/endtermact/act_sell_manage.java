@@ -30,15 +30,15 @@ public class act_sell_manage extends AppCompatActivity {
     private static Button btnQuery;
     TextView textView,txtDefault,txtDefault_Pqty,txtDefault_Pname,txtDefault_Pprice,txtDefault_Cfname,txtDefault_Clname,txtDefault_Ccontact,txtDefault_ID;
     private static  EditText edtitemcode;
-    private static com.example.boparaiyoshidame1_delicioso.JSONParser jParser = new com.example.boparaiyoshidame1_delicioso.JSONParser();
-    private static String urlHost = "http://192.168.1.11/veggi/SelectItemDetails.php";
-    private static String urlHostDelete = "http://192.168.1.11/veggi/delete.php";
-    private static String urlHostID= "";
-    private static String urlHostID= "";
-    private static String urlHostID= "";
-    private static String urlHostID= "";
-    private static String urlHostID= "";
-    private static String urlHostID = "http://192.168.1.11/veggi/SelectId.php";
+    private static com.example.endtermact.JSONParser jParser = new com.example.endtermact.JSONParser();
+    private static String urlHost = "http://172.22.82.166/veggi/SelectItemDetails.php";
+    private static String urlHostDelete = "http://172.22.82.166/veggi/delete.php";
+    private static String urlHostID= "http://172.22.82.166/veggi/selectid.php";
+    private static String urlHostCLNAME= "http://172.22.82.166/veggi/selectCLNAME.php";
+    private static String urlHostPQTY= "http://172.22.82.166/veggi/selectPQTY.php";
+    private static String urlHostPNAME= "http://172.22.82.166/veggi/selectPNAME.php";
+    private static String urlHostPPRICE= "http://172.22.82.166/veggi/selectPPRICE.php";
+    private static String urlCCONTACT="http://172.22.82.166/veggi/selectCCONTACT.php";
     private static String TAG_MESSAGE = "message", TAG_SUCCESS = "success";
     private static String online_dataset = "";
     private static String cItemcode = "";
@@ -421,9 +421,9 @@ public class act_sell_manage extends AppCompatActivity {
                 if (isEmpty.equals("") && !PQTY.equals("HTTPSERVER_ERROR")) { }
 
 
-                String clname = PQTY;
+                String pqty = PQTY;
 
-                String str = PQTY;
+                String str = pqty;
                 final String pqtys[] = str.split("-");
                 list_pqty = new ArrayList<String>(Arrays.asList(pqtys));
                 adapter_pqty = new ArrayAdapter<String>(act_sell_manage.this,

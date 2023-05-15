@@ -28,11 +28,12 @@ public class act_sell_editrecords extends AppCompatActivity {
     private static EditText edtcfname,edtclname,editpname,edtpqty,edtpprice,edtccontact;
     private static TextView tv_civ;
     private static String cItemcode = "";
-    private static com.example.boparaiyoshidame1_delicioso.JSONParser jParser = new com.example.boparaiyoshidame1_delicioso.JSONParser();
-    private static String urlHost = "http://192.168.1.11/veggi/UpdateQty.php";
+    private static com.example.endtermact.JSONParser jParser = new com.example.endtermact.JSONParser();
+    private static String urlHost = "http://172.22.82.166/veggi/UpdateQty.php";
     private static String TAG_MESSAGE = "message" , TAG_SUCCESS = "success";
     private static String online_dataset = "";
-
+    public static final String ID = "ID";
+    private String aydi,cfname, clname, pname,pqty,pprice,ccontact;
     public static final String CFNAME = "CFNAME";
     public static final String CLNAME = "CLNAME";
     public static final String PNAME = "PNAME";
@@ -40,8 +41,7 @@ public class act_sell_editrecords extends AppCompatActivity {
     public static final String PPRICE = "PPRICE";
     public static final String CCONTACT = "CCONTACT";
 
-    public static final String ID = "ID";
-    private String aydi,cfname, clname, pname,pqty,pprice,ccontact;
+
 
     public static String CustomerFirstName = "";
     public static String CustomerLastName = "";
@@ -79,7 +79,7 @@ public class act_sell_editrecords extends AppCompatActivity {
         ccontact = i.getStringExtra(CCONTACT);
         aydi = i.getStringExtra(ID);
 
-        edtclname.setText(cfname);
+        edtcfname.setText(cfname);
         edtclname.setText(clname);
         editpname.setText(pname);
         edtpqty.setText(pqty);
@@ -128,7 +128,7 @@ public class act_sell_editrecords extends AppCompatActivity {
                 //insert anything in this cod
 
                 cPostSQL = aydi;
-                cv.put("ID", cPostSQL);
+                cv.put("id", cPostSQL);
 
                 cPostSQL = " '" + CustomerFirstName + "' ";
                 cv.put("Cfname", cPostSQL);

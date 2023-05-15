@@ -24,8 +24,8 @@ public class act_sell extends AppCompatActivity {
 
     EditText etdpname, edtqty, edtprice, edtfsellername, edtlsellername, edtsellercontactnumber;
     Button btnsubmit;
-    private static com.example.boparaiyoshidame1_delicioso.JSONParser jParser = new com.example.boparaiyoshidame1_delicioso.JSONParser();
-    private static String urlHost = "http://192.168.1.11/veggi/InsertTrans.php";
+    private static com.example.endtermact.JSONParser jParser = new com.example.endtermact.JSONParser();
+    private static String urlHost = "http://172.22.82.166/veggi/InsertTrans.php";
     private static String TAG_MESSAGE = "message", TAG_SUCCESS = "success";
     private static String online_dataset = "";
     private static String Pname = "";
