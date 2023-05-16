@@ -23,9 +23,10 @@ import android.widget.Toast;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class act_sell_editrecords extends AppCompatActivity {
+public class act_buy_editrecords extends AppCompatActivity {
     private static Button btnQuery;
-    private static EditText edtcfname,edtclname,editpname,edtpqty,edtpprice,edtccontact;
+    private static EditText edtbuyername, edtbuyerqty, edtbuyercontact;
+    private static TextView edtcfname,edtclname,editpname,edtpqty,edtpprice,edtccontact;
     private static TextView tv_civ;
     private static String cItemcode = "";
     private static com.example.endtermact.JSONParser jParser = new com.example.endtermact.JSONParser();
@@ -33,13 +34,16 @@ public class act_sell_editrecords extends AppCompatActivity {
     private static String TAG_MESSAGE = "message" , TAG_SUCCESS = "success";
     private static String online_dataset = "";
     public static final String ID = "ID";
-    private String aydi,cfname, clname, pname,pqty,pprice,ccontact;
+    private String aydi,cfname, clname, pname,pqty,pprice,ccontact, buyername,buyercontact,buyerqty;
     public static final String CFNAME = "CFNAME";
     public static final String CLNAME = "CLNAME";
     public static final String PNAME = "PNAME";
     public static final String PQTY = "PQTY";
     public static final String PPRICE = "PPRICE";
     public static final String CCONTACT = "CCONTACT";
+    public static final String BBNAME = "BBNAME";
+    public static final String BBQTY = "BBQTY";
+    public static final String BBCONTACT = "BBCONTACT";
 
 
 
@@ -49,6 +53,9 @@ public class act_sell_editrecords extends AppCompatActivity {
     public static String ProductQuantity = "";
     public static String ProductPrice = "";
     public static String CustomerContact = "";
+    public static String BuyerName = "";
+    public static String BuyerQTY = "";
+    public static String BuyerContact = "";
 
 
 
@@ -57,15 +64,18 @@ public class act_sell_editrecords extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_act_sell_editrecords);
+        setContentView(R.layout.activity_act_buy_editrecords);
 
         btnQuery = (Button) findViewById(R.id.btnQuery);
-        edtcfname = (EditText) findViewById(R.id.edtcfname);
-        edtclname = (EditText) findViewById(R.id.edtclname);
-        editpname = (EditText) findViewById(R.id.editpname);
-        edtpqty = (EditText) findViewById(R.id.edtpqty);
-        edtpprice = (EditText) findViewById(R.id.edtpprice);
-        edtccontact = (EditText) findViewById(R.id.edtccontact);
+        edtbuyername = (EditText) findViewById(R.id.editbuyername);
+        edtbuyerqty = (EditText) findViewById(R.id.editbuyerqty);
+        edtbuyercontact = (EditText) findViewById(R.id.editbuyercontact);
+        edtcfname = (TextView) findViewById(R.id.edtcfname);
+        edtclname = (TextView) findViewById(R.id.edtclname);
+        editpname = (TextView) findViewById(R.id.editpname);
+        edtpqty = (TextView) findViewById(R.id.edtpqty);
+        edtpprice = (TextView) findViewById(R.id.edtpprice);
+        edtccontact = (TextView) findViewById(R.id.edtccontact);
         btnQuery = (Button) findViewById(R.id.btnQuery);
         tv_civ = (TextView) findViewById(R.id.textView3);
 
@@ -77,6 +87,9 @@ public class act_sell_editrecords extends AppCompatActivity {
         pqty = i.getStringExtra(PQTY);
         pprice = i.getStringExtra(PPRICE);
         ccontact = i.getStringExtra(CCONTACT);
+        buyername = i.getStringExtra(BBNAME);
+        buyerqty = i.getStringExtra(BBQTY);
+        buyercontact = i.getStringExtra(BBCONTACT);
         aydi = i.getStringExtra(ID);
 
         edtcfname.setText(cfname);
@@ -85,6 +98,9 @@ public class act_sell_editrecords extends AppCompatActivity {
         edtpqty.setText(pqty);
         edtpprice.setText(pprice);
         edtccontact.setText(ccontact);
+        edtbuyername.setText(buyername);
+        edtbuyerqty.setText(buyerqty);
+        edtbuyercontact.setText(buyercontact);
 
 
         btnQuery.setOnClickListener(new View.OnClickListener() {
@@ -96,6 +112,9 @@ public class act_sell_editrecords extends AppCompatActivity {
                 ProductQuantity = edtpqty.getText().toString();
                 ProductPrice = edtpprice.getText().toString();
                 CustomerContact = edtccontact.getText().toString();
+                BuyerName = edtbuyername.getText().toString();
+                BuyerQTY = edtbuyerqty.getText().toString();
+                BuyerContact = edtbuyercontact.getText().toString();
 
 
                 new uploadDataToURL().execute();
@@ -108,7 +127,7 @@ public class act_sell_editrecords extends AppCompatActivity {
         String cPOST = "", cPostSQL = "", cMessage = "Querying data...";
         String gens,civil;
         int nPostValueIndex;
-        ProgressDialog pDialog = new ProgressDialog(act_sell_editrecords.this);
+        ProgressDialog pDialog = new ProgressDialog(act_buy_editrecords.this);
 
         public uploadDataToURL() { }
         @Override
@@ -148,6 +167,15 @@ public class act_sell_editrecords extends AppCompatActivity {
                 cPostSQL = " '" + CustomerContact + "' ";
                 cv.put("Ccontact", cPostSQL);
 
+                cPostSQL = " '" + BuyerName + "' ";
+                cv.put("Buyer_name", cPostSQL);
+
+                cPostSQL = " '" + BuyerQTY + "' ";
+                cv.put("Buying_qty", cPostSQL);
+
+                cPostSQL = " '" + BuyerContact + "' ";
+                cv.put("Buyer_contactnumber", cPostSQL);
+
 
 
                 JSONObject json = jParser.makeHTTPRequest(urlHost, "POST" , cv);
@@ -173,10 +201,10 @@ public class act_sell_editrecords extends AppCompatActivity {
             super.onPostExecute(s);
             pDialog.dismiss();
             String isEmpty = "";
-            AlertDialog.Builder alert = new AlertDialog.Builder(act_sell_editrecords.this);
+            AlertDialog.Builder alert = new AlertDialog.Builder(act_buy_editrecords.this);
             if (s !=null) {
                 if (isEmpty.equals("") && !s.equals("HTTPSERVER_ERROR")) { }
-                Toast.makeText(act_sell_editrecords.this, s , Toast.LENGTH_SHORT).show();
+                Toast.makeText(act_buy_editrecords.this, s , Toast.LENGTH_SHORT).show();
             } else {
                 alert.setMessage("Query Interrupted... \nPlease Check Internet connection");
                 alert.setTitle("Error");

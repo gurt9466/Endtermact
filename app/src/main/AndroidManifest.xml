@@ -20,7 +20,17 @@
         android:theme="@style/Theme.Endtermact"
         tools:targetApi="31">
         <activity
+            android:name=".act_buy_manage_editrecords"
+            android:exported="false" />
+        <activity
             android:name=".act_sell_editrecords"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".act_buy_editrecords"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -49,13 +59,6 @@
         </activity>
         <activity
             android:name=".act_buy_options"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".act_sell_requests"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -94,9 +97,6 @@
             android:exported="true" />
         <activity
             android:name=".act_sell"
-            android:exported="true" />
-        <activity
-            android:name=".act_buy"
             android:exported="true" />
         <activity
             android:name=".splashscreen"

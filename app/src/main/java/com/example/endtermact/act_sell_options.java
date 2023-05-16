@@ -35,12 +35,5 @@ public class act_sell_options extends AppCompatActivity {
             }
         });
 
-        btnbuyrequests.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent (act_sell_options.this, act_sell_requests.class);
-                startActivity(intent);
-            }
-        });
     }
 }
